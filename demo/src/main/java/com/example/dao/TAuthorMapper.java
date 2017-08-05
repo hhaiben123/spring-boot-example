@@ -1,6 +1,7 @@
 package com.example.dao;
 
 import com.example.entity.TAuthor;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -18,4 +19,6 @@ public interface TAuthorMapper {
     int updateByPrimaryKey(TAuthor record);
 
     List<TAuthor> findAll();
+
+    TAuthor selectByrealName(@Param("realName") String realName);
 }

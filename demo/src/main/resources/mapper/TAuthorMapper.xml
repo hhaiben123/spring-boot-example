@@ -19,7 +19,7 @@
     delete from t_author
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.example.entity.TAuthor">
+  <insert id="insert"  parameterType="com.example.entity.TAuthor">
     insert into t_author (id, real_name, nick_name
       )
     values (#{id,jdbcType=BIGINT}, #{realName,jdbcType=VARCHAR}, #{nickName,jdbcType=VARCHAR}
@@ -69,10 +69,17 @@
     where id = #{id,jdbcType=BIGINT}
   </update>
 
-  <select id="findAll" parameterType="java.lang.Long" resultMap="BaseResultMap">
+  <select id="findAll" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
-    from t_authora
-    where 1=1
+    from t_author
+    where 1=788
+  </select>
+
+  <select id="selectByrealName" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_author
+    where real_name = #{realName,jdbcType=VARCHAR}
   </select>
 </mapper>
