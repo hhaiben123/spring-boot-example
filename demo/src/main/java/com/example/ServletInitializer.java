@@ -1,5 +1,6 @@
-package com.example.demo;
+package com.example;
 
+import com.example.DemoApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 
